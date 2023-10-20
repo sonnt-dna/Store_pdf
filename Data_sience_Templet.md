@@ -4,14 +4,14 @@ Bước 1	Sau khi PMO đã hỗ trợ nhóm tác giả tạo Workspace và phân
 PMO hỗ trợ PO xin cấp phép truy cập và sử dụng tài nguyên (trang thiết bị (Capacity) và dữ liệu của Viện) theo đúng quy định của Viện.	PO và các thành viên nhóm xác định các nguồn tài liệu để phục nhiệm vụ  như đã được phê duyệt.	
 
 Bước 2 (Bước 2A, 2B)
-	Nhóm tác giả nhập dữ liệu từ bên ngoài, hoặc các nguồn trực tuyến có sẵn đã được cấp phép ở bước 1
-	Có thể sử dụng DataFlow dữ liệu sẽ đi thẳng vào Lakehouse người dùng đã lựa chọn để lưu trữ.
-	Các DA có thể sử dụng Notebook để xử lý dữ liệu thông qua công cụ Data Wrangle để xây dựng workflow xử lý dữ liệu.
-	Người dùng thực hiện việc khai phá dữ liệu (EDA)
-	1.Chuẩn hóa dữ liệu: Data Wrangler cho phép Người dùng thực hiện các hoạt động chuẩn hóa dữ liệu như xóa hàng và cột, lọc dữ liệu, đổi tên cột, đổi kiểu dữ liệu, và nhiều hơn nữa.
-	2.Tự động nhận dạng kiểu dữ liệu: Công cụ này tự động nhận dạng kiểu dữ liệu của cột và đề xuất các hoạt động chuẩn hóa phù hợp.
-	3.Xem trực quan: Người dùng có thể xem trước dữ liệu của mình thông qua biểu đồ và bảng để hiểu rõ hơn về các biến thể và quan hệ giữa chúng.
-	4.Xử lý dữ liệu lớn: Data Wrangler được thiết kế để xử lý dữ liệu lớn, cho phép Người dùng làm việc với tập dữ liệu có kích thước lớn.
+Nhóm tác giả nhập dữ liệu từ bên ngoài, hoặc các nguồn trực tuyến có sẵn đã được cấp phép ở bước 1.
+Có thể sử dụng DataFlow dữ liệu sẽ đi thẳng vào Lakehouse người dùng đã lựa chọn để lưu trữ.
+Các DA có thể sử dụng Notebook để xử lý dữ liệu thông qua công cụ Data Wrangle để xây dựng workflow xử lý dữ liệu.
+Người dùng thực hiện việc khai phá dữ liệu (EDA)
+1.Chuẩn hóa dữ liệu: Data Wrangler cho phép Người dùng thực hiện các hoạt động chuẩn hóa dữ liệu như xóa hàng và cột, lọc dữ liệu, đổi tên cột, đổi kiểu dữ liệu, và nhiều hơn nữa.
+2.Tự động nhận dạng kiểu dữ liệu: Công cụ này tự động nhận dạng kiểu dữ liệu của cột và đề xuất các hoạt động chuẩn hóa phù hợp.
+3.Xem trực quan: Người dùng có thể xem trước dữ liệu của mình thông qua biểu đồ và bảng để hiểu rõ hơn về các biến thể và quan hệ giữa chúng.
+4.Xử lý dữ liệu lớn: Data Wrangler được thiết kế để xử lý dữ liệu lớn, cho phép Người dùng làm việc với tập dữ liệu có kích thước lớn.
 
 	Đồng thời toàn bộ các step tiến hành xử lý dữ liệu sẽ được xuất ra cell của notebook dưới dạng code, giúp người dùng hoàn toàn có thể lưu trữ và sử dụng cho các đối tượng DataFrame có cấu trúc data tương tự.
 
