@@ -1,31 +1,69 @@
+CHI TIẾT CÔNG VIỆC CẦN THỰC HIỆN TRONG QUÁ TRÌNH XÂY DỰNG VÀ TRIỂN KHAI DATA SIENCE WORKFLOW
+Bước 	PMO	PO AND TEAM MEMBERS	Note công cụ
+Bước 1	Sau khi PMO đã hỗ trợ nhóm tác giả tạo Workspace và phân quyền.
+PMO hỗ trợ PO xin cấp phép truy cập và sử dụng tài nguyên (trang thiết bị (Capacity) và dữ liệu của Viện) theo đúng quy định của Viện.	PO và các thành viên nhóm xác định các nguồn tài liệu để phục nhiệm vụ  như đã được phê duyệt.	
+
+Bước 2 (Bước 2A, 2B)
+	Nhóm tác giả nhập dữ liệu từ bên ngoài, hoặc các nguồn trực tuyến có sẵn đã được cấp phép ở bước 1
+	Có thể sử dụng DataFlow dữ liệu sẽ đi thẳng vào Lakehouse người dùng đã lựa chọn để lưu trữ.
+	Các DA có thể sử dụng Notebook để xử lý dữ liệu thông qua công cụ Data Wrangle để xây dựng workflow xử lý dữ liệu.
+	Người dùng thực hiện việc khai phá dữ liệu (EDA)
+	1.Chuẩn hóa dữ liệu: Data Wrangler cho phép Người dùng thực hiện các hoạt động chuẩn hóa dữ liệu như xóa hàng và cột, lọc dữ liệu, đổi tên cột, đổi kiểu dữ liệu, và nhiều hơn nữa.
+	2.Tự động nhận dạng kiểu dữ liệu: Công cụ này tự động nhận dạng kiểu dữ liệu của cột và đề xuất các hoạt động chuẩn hóa phù hợp.
+	3.Xem trực quan: Người dùng có thể xem trước dữ liệu của mình thông qua biểu đồ và bảng để hiểu rõ hơn về các biến thể và quan hệ giữa chúng.
+	4.Xử lý dữ liệu lớn: Data Wrangler được thiết kế để xử lý dữ liệu lớn, cho phép Người dùng làm việc với tập dữ liệu có kích thước lớn.
+
+	Đồng thời toàn bộ các step tiến hành xử lý dữ liệu sẽ được xuất ra cell của notebook dưới dạng code, giúp người dùng hoàn toàn có thể lưu trữ và sử dụng cho các đối tượng DataFrame có cấu trúc data tương tự.
+
+Lưu ý: Với bản preview trên Fabric thì hiện tại Data Wrangler chỉ hỗ trợ DataFrame Pandas, chưa hỗ trợ dạng Spark.
+
+Link Miro hướng dẫn chi tiết: https://miro.com/app/board/uXjVMClAjPA=/
+Bước 3 Người dùng có 2 cách lựa chọn để có thể xây dựng mô hình học máy
+		Cách 1: Sử dụng AutoML của PowerBI services để xây dựng mô hình học máy, quy trình xây dựng mô hình học máy sử dụng AutoML được trình bày chi tiết và rõ ràng trong tài liệu sau từ trang 167 - 178.
+		Cách 2: Dùng Notebook xây dựng mô hình học máy, người dùng có thể tham khảo mẫu quy trình Data sience, trong notebook mẫu có đầy đủ các bước thực hiện một dự án DataSicene (nhập liệu data, EDA, Feature Engineering, Train & Test và đo lường kết quả) với đường link sau:
+	
+Bước 4 Người dùng sử dụng AutoML để xây dựng mô hình học máy, các kết quả sẽ lưu lại trong report của mỗi lần chạy.
+	Sau khi thực hiện quá trình xây dựng học máy người dùng cần lưu trữ các kết quả của các lần chạy thử nghiệm bằng việc sử dụng các các công cụ sẵn có trên nền tảng Fabric hoặc mã nguồn mở MLflow.
+	Mỗi một project có thể tạo lập một hoặc nhiều Experiment khác nhau, chúng ta có thể lưu trữ nhiều lần chạy vào một Experiment.
+		
+
+Bước 5 và Bước 6 Xây dựng các Policy sử dụng Key Autho của các workspace và gửi cho DE:
+	Những ai được cấp Key truy cập, thời gian sử dụng của mỗi Key,..
+	Giới hạn lượng truy cập nếu có
+	Key Auth sau khi đã cấu hình t theo các API mà DE cung cấp
+	Dưới đây là 3 biểu mẫu cung cấp cách sử dụng ML (Experiment) trên các nền tảng lưu trữ (trên Fabric Notebook hoặc Machine learning sudio hoặc Dagshub):
+	Hướng dẫn sử dụng Tracking trên nền tảng Fabric Notebook: LINK https://app.powerbi.com/links/vLFLKfVMf7?ctid=c5ec5abe-76c1-46cb-b3fe-c3b0071ffdb3&pbi_source=linkShare&experience=power-bi
+	Hướng dẫn sử dụng Tracking trên Machine Learning Studio: LINK: https://app.powerbi.com/links/8J4qbYJG2f?ctid=c5ec5abe-76c1-46cb-b3fe-c3b0071ffdb3&pbi_source=linkShare&ctid=c5ec5abe-76c1-46cb-b3fe-c3b0071ffdb3&experience=data-science
+	Hướng dẫn sử dụng Tracking trên Dagshub: LINK: https://app.powerbi.com/links/hkAG_iRBeh?ctid=c5ec5abe-76c1-46cb-b3fe-c3b0071ffdb3&pbi_source=linkShare&ctid=c5ec5abe-76c1-46cb-b3fe-c3b0071ffdb3&experience=data-science
+	Người dùng hoàn toàn có thể lưu trữ trên Local
+                 a. Hướng dẫn sử dụng Tracking trên máy tính local	
+Bước 7
+		Kết quả được lưu trên Machine Learning Studio
+		Kết quả được lưu trên Dagshub
+	
+Bước 8	
+
+	Kéo dữ liệu từ lakehouse để có thể visualization
+Cung cấp SQL để có thể truy vấn được thông tin dữ liệu
+	
+Bước 9		Kết qủa có thể được hiển thị ở trên PowerBI report 
+Có thể sử dụng SQL endpoint để truyền dữ liệu ra ngoài
+Softcode truyền ra ngoài để tạo lập API
+Chi tiết quy trình Link Miro: https://miro.com/app/board/uXjVMhAZW0s=/
 
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## 1.4_Regression_ML_workflows
-# 
-# 
-# 
-
-# <center>
-# 
-# # **Regression ML workflow**
-# 
-
+# ## Regression_ML_workflows
+# # Regression ML workflow**
 # # **I./ Khai báo thư viện**
-
 # ## **1) Cài đặt thư viện**
-
 # <mark>Nếu khi chạy khai báo thư viện mà cell hiện lỗi có dạng như: **ModuleNotFoundError: No module named 'tên-thư-viện'**: </mark>
 # 
 # **Chạy câu lệnh sau**:
 # ```
 # !pip install tên-thư-viện
 # ```
-
-# In[1]:
-
-
 get_ipython().system('pip install -q lightgbm==3.3.3')
 get_ipython().system('pip install -q graphviz')
 get_ipython().system('pip install -q bz2file==0.98')
